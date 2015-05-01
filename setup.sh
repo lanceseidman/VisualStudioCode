@@ -1,7 +1,7 @@
 #!/bin/bash
 # SETUP SCRIPT FOR MS VISUAL STUDIO CORE FOR LINUX
 # - SCRIPTED BY LANCE SEIDMAN @LANCESEIDMAN
-
+dir = "`pwd`"
 # check to see if wget exists/any required items
 if ! [ -x "$(command -v wget)" ]; then
  echo "Must have wget! Do you want me to install it?"
@@ -54,7 +54,7 @@ sleep 1
 unzip MSVSC.zip #unzip file we downloaded/saved
 
 echo "Creating link/alias..."
-alias code='MSVSC/Code' | sudo tee -a ~/.bashrc
+alias code='$dir/MSVSC/Code' | sudo tee -a ~/.bashrc
 sleep 1
 echo "You can now run VSC by typing 'code' in a terminal!\n"
 sleep 1
